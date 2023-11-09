@@ -1,6 +1,6 @@
-package com.example.demo.result;
+package com.example.demo.common.result;
 
-import com.example.demo.exception.ErrorCode;
+import com.example.demo.common.exception.ErrorCode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
