@@ -1,6 +1,6 @@
-package com.example.demo.common.result;
+package com.soft2242.shop.common.result;
 
-import com.example.demo.common.exception.ErrorCode;
+import com.soft2242.shop.common.exception.ErrorCode;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

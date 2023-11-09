@@ -1,4 +1,4 @@
-package com.example.demo.common.constant;
+package com.soft2242.shop.common.constant;
 
 
 /**

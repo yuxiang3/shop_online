@@ -1,7 +1,7 @@
-package com.example.demo.common.handler;
+package com.soft2242.shop.common.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import com.example.demo.common.constant.Constant;
+import com.soft2242.shop.common.constant.Constant;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.stereotype.Component;
 

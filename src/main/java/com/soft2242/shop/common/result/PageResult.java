@@ -1,4 +1,4 @@
-package com.example.demo.common.result;
+package com.soft2242.shop.common.result;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

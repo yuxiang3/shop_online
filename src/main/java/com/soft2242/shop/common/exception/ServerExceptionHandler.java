@@ -1,6 +1,6 @@
-package com.example.demo.common.exception;
+package com.soft2242.shop.common.exception;
 
-import com.example.demo.common.result.Result;
+import com.soft2242.shop.common.result.Result;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindException;

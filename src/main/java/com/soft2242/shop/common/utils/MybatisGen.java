@@ -1,4 +1,5 @@
-package com.example.demo.common.utils;
+package com.soft2242.shop.common.utils;
+
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
@@ -31,8 +32,8 @@ public class MybatisGen {
 
                 })
                 .packageConfig(builder -> {
-                    builder.parent("com.example") // 设置父包名
-                            .moduleName("demo") // 设置父包模块名
+                    builder.parent("com.soft2242") // 设置父包名
+                            .moduleName("shop") // 设置父包模块名
                             .pathInfo(outputFileStringMap);
                     // 设置mapperXml生成路径
                 })
