@@ -1,20 +1,27 @@
 package com.soft2242.shop.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.soft2242.shop.convert.IndexRecommendConvert;
 import com.soft2242.shop.entity.IndexRecommend;
 import com.soft2242.shop.mapper.IndexRecommendMapper;
 import com.soft2242.shop.service.IndexRecommendService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.soft2242.shop.vo.IndexRecommendVO;
 import org.springframework.stereotype.Service;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author yuxiang3
- * @since 2023-11-09
- */
-@Service
-public class IndexRecommendServiceImpl extends ServiceImpl<IndexRecommendMapper, IndexRecommend> implements IndexRecommendService {
+import java.util.List;
 
-}
+
+ @Service
+ public class IndexRecommendServiceImpl extends ServiceImpl<IndexRecommendMapper, IndexRecommend> implements IndexRecommendService {
+
+
+ @Override
+ public List<IndexRecommendVO> getList() {
+ LambdaQueryWrapper<IndexRecommend> wrapper = new LambdaQueryWrapper<>();
+ wrapper.orderByDesc(IndexRecommend::getCreateTime);
+ List<IndexRecommend> list = baseMapper.selectList(wrapper);
+ List<IndexRecommendVO> results = IndexRecommendConvert.INSTANCE.convertToUserVoList(list);
+ return results;
+ }
+ }
