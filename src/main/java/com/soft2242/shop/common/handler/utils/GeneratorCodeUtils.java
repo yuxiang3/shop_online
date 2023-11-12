@@ -1,4 +1,4 @@
-package com.soft2242.shop.common.utils;
+package com.soft2242.shop.common.handler.utils;
 
 /**
  * 生成6位随机数

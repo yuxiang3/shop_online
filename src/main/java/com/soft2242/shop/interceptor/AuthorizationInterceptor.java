@@ -1,8 +1,8 @@
 package com.soft2242.shop.interceptor;
 
 import com.soft2242.shop.common.exception.ServerException;
-import com.soft2242.shop.common.utils.JWTUtils;
-import com.soft2242.shop.common.constant.APIConstant;
+import com.soft2242.shop.common.handler.utils.JWTUtils;
+import com.soft2242.shop.constant.APIConstant;
 import com.soft2242.shop.service.RedisService;
 import com.soft2242.shop.vo.UserTokenVO;
 import jakarta.annotation.Resource;

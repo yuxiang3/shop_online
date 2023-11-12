@@ -13,7 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import static com.soft2242.shop.common.utils.ObtainUserIdUtils.getUserId;
+import static com.soft2242.shop.common.handler.utils.ObtainUserIdUtils.getUserId;
 
 
 @Tag(name = "用户模块")

@@ -3,14 +3,13 @@ package com.soft2242.shop.service.impl;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.aliyun.oss.OSS;
-import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.OSSClientBuilder;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.soft2242.shop.common.exception.ServerException;
-import com.soft2242.shop.common.utils.AliyunResource;
-import com.soft2242.shop.common.utils.FileResource;
-import com.soft2242.shop.common.utils.GeneratorCodeUtils;
-import com.soft2242.shop.common.utils.JWTUtils;
+import com.soft2242.shop.common.handler.utils.AliyunResource;
+import com.soft2242.shop.common.handler.utils.FileResource;
+import com.soft2242.shop.common.handler.utils.GeneratorCodeUtils;
+import com.soft2242.shop.common.handler.utils.JWTUtils;
 import com.soft2242.shop.convert.UserConvert;
 import com.soft2242.shop.entity.User;
 import com.soft2242.shop.mapper.UserMapper;
@@ -31,7 +30,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
-import static com.soft2242.shop.common.constant.APIConstant.*;
+import static com.soft2242.shop.constant.APIConstant.*;
 
 /**
  * <p>

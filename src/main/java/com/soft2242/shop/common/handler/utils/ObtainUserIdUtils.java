@@ -1,4 +1,4 @@
-package com.soft2242.shop.common.utils;
+package com.soft2242.shop.common.handler.utils;
 
 import com.soft2242.shop.common.exception.ServerException;
 import jakarta.servlet.http.HttpServletRequest;

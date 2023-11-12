@@ -1,4 +1,4 @@
-package com.soft2242.shop.common.utils;
+package com.soft2242.shop.common.handler.utils;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
