@@ -33,6 +33,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
             throw new ServerException("access denied");
         } else {
             String userId = map.get("userId").toString();
+            System.out.println("拦截器插入执行"+userId);
             request.setAttribute("userId", userId);
         }
 

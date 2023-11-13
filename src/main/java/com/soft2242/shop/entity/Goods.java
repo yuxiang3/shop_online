@@ -94,4 +94,11 @@ public class Goods {
     @ApiModelProperty("更新时间")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
+    public String getProductPictures() {
+        return productPictures;
+    }
+
+    public void setProductPictures(String productPictures) {
+        this.productPictures = productPictures;
+    }
 }

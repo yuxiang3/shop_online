@@ -11,6 +11,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Builder;
+import lombok.ToString;
+
 
 /**
  * <p>
@@ -21,7 +24,9 @@ import lombok.Setter;
  * @since 2023-11-09
  */
 @Getter
+@ToString
 @Setter
+@Builder
 @TableName("t_user_shipping_address")
 @ApiModel(value = "UserShippingAddress对象", description = "")
 public class UserShippingAddress {
@@ -64,7 +69,7 @@ public class UserShippingAddress {
 
     @ApiModelProperty("逻辑删除(0-未删除，1-已删除)")
     @TableField("delete_flag")
-    @TableLogic
+    @TableLogic(value = "0",delval = "1")
     private Integer deleteFlag;
 
     @ApiModelProperty("创建时间")
@@ -74,4 +79,6 @@ public class UserShippingAddress {
     @ApiModelProperty("更新时间")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
+
 }
+

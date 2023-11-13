@@ -22,7 +22,6 @@ import java.util.List;
  */
 @Tag(name = "推荐管理")
 @RestController
-
 @RequestMapping("home")
 @AllArgsConstructor
 public class IndexRecommendController {

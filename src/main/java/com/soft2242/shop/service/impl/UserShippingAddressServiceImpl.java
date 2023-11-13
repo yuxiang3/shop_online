@@ -6,8 +6,8 @@ import com.soft2242.shop.entity.UserShippingAddress;
 import com.soft2242.shop.convert.AddressConvert;
 import com.soft2242.shop.enums.AddressDefaultEnum;
 import com.soft2242.shop.mapper.UserShippingAddressMapper;
-import com.soft2242.shop.vo.AddressVO;
 import com.soft2242.shop.service.UserShippingAddressService;
+import com.soft2242.shop.vo.AddressVO;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,8 @@ import java.util.List;
 
 @Service
 public class UserShippingAddressServiceImpl extends ServiceImpl<UserShippingAddressMapper, UserShippingAddress> implements UserShippingAddressService {
+
+
     @Override
     public Integer saveShippingAddress(AddressVO addressVO) {
         UserShippingAddress convert = AddressConvert.INSTANCE.convert(addressVO);
@@ -45,6 +47,28 @@ public class UserShippingAddressServiceImpl extends ServiceImpl<UserShippingAddr
         UserShippingAddress address = AddressConvert.INSTANCE.convert(addressVO);
         updateById(address);
         return address.getId();
+    }
+    @Override
+    public List<AddressVO> getAddressList(Integer userId) {
+        List<UserShippingAddress> list = baseMapper.selectList(new LambdaQueryWrapper<UserShippingAddress>().eq(UserShippingAddress::getUserId, userId));
+        return AddressConvert.INSTANCE.convertToAddressVOList(list);
+    }
+    @Override
+    public AddressVO getAddress(Integer id) {
+        UserShippingAddress address = baseMapper.selectOne(new LambdaQueryWrapper<UserShippingAddress>().eq(UserShippingAddress::getId, id));
+        return AddressConvert.INSTANCE.convertToAddressVO(address);
+    }
+    @Override
+    public void deleteAddress(Integer id) {
+        //逻辑删除,将地址的delete_flag置为1即可
+        UserShippingAddress address = baseMapper.selectById(id);
+        if (address == null){
+            throw new ServerException("地址不存在");
+        }else if (address.getIsDefault() == AddressDefaultEnum.DEFAULT_ADDRESS.getValue()){
+            throw new ServerException("默认地址不能删除");
+        }else {
+            baseMapper.deleteById(id);
+        }
     }
 
 }
